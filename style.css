@@ -640,7 +640,7 @@ body {
 
 .desktop-banner {
   width: calc(100% - 1px);
-  max-width: 1400px;
+  max-width: 1200px;
   height: 590px;
   margin: 20px auto 0;
   overflow: hidden;
