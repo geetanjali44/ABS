@@ -527,8 +527,6 @@ body {
   background-color: #f8dada61;
 }
 
-/* Shimmer layer */
-
 .desktop-banner::before,
 .small-banner::before,
 .product-image::before {
@@ -547,19 +545,19 @@ body {
   );
 
   background-size: 220% 100%;
-  animation: image-shimmer 2s linear infinite;
-}
 
-/* Hide images until loaded */
+  /* Higher time = slower shimmer */
+  animation: image-shimmer 4s linear infinite;
+}
 
 .desktop-banner img,
 .small-banner img,
 .product-image img {
   opacity: 0;
-  transition: opacity 1s ease;
-}
 
-/* Remove shimmer after image loads */
+  /* Slower fade after loading */
+  transition: opacity 2s ease;
+}
 
 .desktop-banner.image-loaded::before,
 .small-banner.image-loaded::before,
@@ -582,8 +580,6 @@ body {
     background-position: -200% 0;
   }
 }
-
-/* Stop animations for users who prefer reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
   .desktop-banner::before,
