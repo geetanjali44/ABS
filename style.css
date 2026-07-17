@@ -524,7 +524,7 @@ body {
 .product-image {
   position: relative;
   overflow: hidden;
-    background-color: #f8dada61;
+  background-color: #f8dada61;
 }
 
 /* Shimmer layer */
@@ -547,7 +547,7 @@ body {
   );
 
   background-size: 220% 100%;
-  animation: image-shimmer 1.3s linear infinite;
+  animation: image-shimmer 2s linear infinite;
 }
 
 /* Hide images until loaded */
@@ -556,7 +556,7 @@ body {
 .small-banner img,
 .product-image img {
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 1s ease;
 }
 
 /* Remove shimmer after image loads */
