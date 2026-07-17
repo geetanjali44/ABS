@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ".desktop-banner, .small-banner, .product-image"
   );
 
+  const minimumShimmerTime = 2000;
+  const startTime = Date.now();
+
   imageContainers.forEach(function (container) {
     const image = container.querySelector("img");
 
@@ -30,24 +33,32 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    function showImage() {
-      container.classList.add("image-loaded");
+    function removeShimmer() {
+      const elapsedTime = Date.now() - startTime;
+      const remainingTime = Math.max(
+        minimumShimmerTime - elapsedTime,
+        0
+      );
+
+      setTimeout(function () {
+        container.classList.add("image-loaded");
+      }, remainingTime);
     }
 
-    function handleImageError() {
-      container.classList.add("image-loaded");
-      container.classList.add("image-error");
-    }
-
-    /*
-      If the image was already loaded from browser cache,
-      show it immediately.
-    */
     if (image.complete && image.naturalWidth > 0) {
-      showImage();
+      removeShimmer();
     } else {
-      image.addEventListener("load", showImage, { once: true });
-      image.addEventListener("error", handleImageError, { once: true });
+      image.addEventListener("load", removeShimmer, {
+        once: true
+      });
+
+      image.addEventListener(
+        "error",
+        function () {
+          removeShimmer();
+        },
+        { once: true }
+      );
     }
   });
 });
