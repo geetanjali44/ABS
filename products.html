@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Ajjaram Brass Products</title>
+
+  <!-- Existing header CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Products page CSS -->
+  <link rel="stylesheet" href="products.css">
+</head>
+
+<body>
+
+  <!-- Same header -->
+  <header class="header">
+    <div class="header-container">
+
+      <a href="index.html" class="logo" aria-label="Home">
+        <span class="logo-main">AJJARAM</span>
+        <span class="logo-sub">Brass &amp; Sources</span>
+      </a>
+
+      <form class="search-form" id="productsSearchForm">
+        <input
+          type="search"
+          id="productsSearchInput"
+          placeholder="Search..."
+          aria-label="Search products"
+          autocomplete="off"
+        >
+
+        <button type="submit" aria-label="Search">
+          <svg viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="M20 20L16.5 16.5"></path>
+          </svg>
+        </button>
+      </form>
+
+      <button
+        class="profile-button"
+        type="button"
+        aria-label="Open profile"
+      >
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="4"></circle>
+          <path
+            d="M4 21C4 16.5 7.5 14 12 14C16.5 14 20 16.5 20 21"
+          ></path>
+        </svg>
+      </button>
+
+    </div>
+  </header>
+
+  <main class="catalog-layout">
+
+    <!-- Left categories -->
+    <aside class="category-sidebar">
+      <h2>Categories</h2>
+
+      <button
+        class="category-item active"
+        type="button"
+        data-category="all"
+      >
+        <img
+          src="images/elephant.png"
+          alt=""
+        >
+        <span>All Products</span>
+      </button>
+
+      <button
+        class="category-item"
+        type="button"
+        data-category="pooja"
+      >
+        <img
+          src="images/diya.png"
+          alt=""
+        >
+        <span>Pooja Items</span>
+      </button>
+
+      <button
+        class="category-item"
+        type="button"
+        data-category="kitchen"
+      >
+        <img
+          src="images/dinner set.png"
+          alt=""
+        >
+        <span>Kitchen Items</span>
+      </button>
+
+      <button
+        class="category-item"
+        type="button"
+        data-category="idols"
+      >
+        <img
+          src="images/krishna.png"
+          alt=""
+        >
+        <span>Brass Idols</span>
+      </button>
+
+      <button
+        class="category-item"
+        type="button"
+        data-category="decor"
+      >
+        <img
+          src="images/flower-vase.png"
+          alt=""
+        >
+        <span>Home Décor</span>
+      </button>
+
+      <button
+        class="category-item"
+        type="button"
+        data-category="gifting"
+      >
+        <img
+          src="images/swan.png"
+          alt=""
+        >
+        <span>Gifting</span>
+      </button>
+    </aside>
+
+    <!-- Right products -->
+    <section class="catalog-content">
+
+      <div class="catalog-heading">
+        <div>
+          
+          <h1 id="catalogTitle">All Products</h1>
+        </div>
+
+        <button
+  class="catalog-back-button"
+  type="button"
+  onclick="window.location.href='index.html'"
+  aria-label="Back to home"
+>
+  &larr; Back
+</button>
+      </div>
+
+      <p
+        class="catalog-message"
+        id="catalogMessage"
+        aria-live="polite"
+      ></p>
+
+      <div class="catalog-grid" id="catalogGrid"></div>
+
+    </section>
+
+  </main>
+
+  <div
+    class="cart-toast"
+    id="cartToast"
+    aria-live="polite"
+  ></div>
+
+  <script src="products.js"></script>
+</body>
+</html>
